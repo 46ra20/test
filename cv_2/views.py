@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import os
 import cv2 as cv
+# from .models import ImageModel
 
 # i=0
 def test(request):
@@ -15,6 +16,8 @@ def test(request):
         if(ret):
             try:
                 suc = cv.imwrite('./image %d.png'%i,frame)
+                # ImageModel.img = cv.imwrite('./image %d.png'%i,frame)
+                # ImageModel.save()
             except(suc):
                 print(suc)
             print('success',suc)
